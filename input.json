@@ -1,0 +1,374 @@
+{
+  "Package": {
+    "Content": {
+      "Application": {
+        "Address": [
+          {
+            "AustralianPostCode": "3000",
+            "AustralianState": "VIC",
+            "Country": "AU",
+            "Suburb": "Melbourne",
+            "Type": "Standard",
+            "UniqueID": "ADDRESS-001",
+            "Standard": {
+              "StreetName": "Collins",
+              "StreetNumber": "18",
+              "StreetType": "Street"
+            }
+          },
+          {
+            "AustralianPostCode": "2028",
+            "AustralianState": "NSW",
+            "Country": "AU",
+            "Suburb": "Double Bay",
+            "Type": "Standard",
+            "UniqueID": "ADD002-DOUBLEBAY",
+            "Standard": {
+              "StreetName": "Ocean",
+              "StreetNumber": "100",
+              "StreetType": "Avenue"
+            }
+          }
+        ],
+        "Household": [
+          {
+            "NumberOfAdults": 2,
+            "NumberOfDependants": 0,
+            "UniqueID": "HOUSEHOLD-001",
+            "ExpenseDetails": {
+              "LivingExpense": [
+                {
+                  "Amount": 350.0,
+                  "Category": "Groceries",
+                  "Frequency": "Weekly",
+                  "UniqueID": "LE001-GROCERIES",
+                  "PercentResponsible": {
+                    "Owner": [
+                      {
+                        "Percent": 50.0,
+                        "x_Party": "PA001-CHRIS"
+                      },
+                      {
+                        "Percent": 50.0,
+                        "x_Party": "PA002-LIAM"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "Amount": 1500.0,
+                  "Category": "Investment Property Running Costs",
+                  "Frequency": "Monthly",
+                  "UniqueID": "LE002-INVESTMENT-CHRIS",
+                  "PercentResponsible": {
+                    "Owner": [
+                      {
+                        "Percent": 100.0,
+                        "x_Party": "PA001-CHRIS"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "Liability": [
+          {
+            "AnnualInterestRate": 3.75,
+            "OriginalAmount": 200000.0,
+            "OriginalLoanPurpose": "Personal",
+            "OutstandingBalance": 90000.0,
+            "Type": "Car Loan",
+            "PercentOwned": {
+              "Owner": [
+                {
+                  "Percent": 50.0,
+                  "x_Party": "PA001-CHRIS"
+                },
+                {
+                  "Percent": 50.0,
+                  "x_Party": "PA002-LIAM"
+                }
+              ]
+            },
+            "RemainingTerm": {
+              "Duration": 32,
+              "Units": "Months"
+            },
+            "Repayment": [
+              {
+                "RepaymentAmount": 3000.0,
+                "RepaymentFrequency": "Monthly"
+              }
+            ]
+          }
+        ],
+        "LoanDetails": [
+          {
+            "AmountRequested": 5500000.0,
+            "LoanType": "Amortising Home Loan",
+            "Borrowers": {
+              "Owner": [
+                {
+                  "Percent": 100.0,
+                  "x_Party": "PA001-CHRIS"
+                },
+                {
+                  "Percent": 100.0,
+                  "x_Party": "PA002-LIAM"
+                }
+              ]
+            },
+            "LendingPurpose": [
+              {
+                "IncludesRefinancing": "No",
+                "LenderCode": "NewPurchase"
+              }
+            ],
+            "LoanPurpose": {
+              "PrimaryPurpose": "Owner Occupied"
+            },
+            "ProposedRepayment": {
+              "RegularRepayment": [
+                {
+                  "Amount": 12000.0,
+                  "Frequency": "Fortnightly"
+                }
+              ]
+            },
+            "Security": [
+              {
+                "x_Security": "REA002-DOUBLEBAY"
+              }
+            ],
+            "Term": {
+              "TotalTermDuration": 25,
+              "TotalTermUnits": "Years"
+            }
+          }
+        ],
+        "NonRealEstateAsset": [
+          {
+            "Transaction": "Owns",
+            "Type": "Motor Vehicle and Transport",
+            "UniqueID": "NREA001-FERRARI",
+            "EstimatedValue": {
+              "EstimateBasis": "Applicant Estimate",
+              "Value": 220000.0
+            },
+            "MotorVehicle": {
+              "Make": "Ferrari",
+              "Model": "Testarossa",
+              "RegistrationNumber": "THOR",
+              "Year": "1984"
+            },
+            "PercentOwned": {
+              "Owner": [
+                {
+                  "Percent": 50.0,
+                  "x_Party": "PA001-CHRIS"
+                },
+                {
+                  "Percent": 50.0,
+                  "x_Party": "PA002-LIAM"
+                }
+              ]
+            }
+          },
+          {
+            "Transaction": "Owns",
+            "Type": "Financial Asset",
+            "UniqueID": "NREA003-SAVINGS",
+            "EstimatedValue": {
+              "EstimateBasis": "Applicant Estimate",
+              "Value": 4000000.0
+            },
+            "FinancialAsset": {
+              "Type": "Savings Account"
+            },
+            "PercentOwned": {
+              "Owner": [
+                {
+                  "Percent": 100.0,
+                  "x_Party": "PA002-LIAM"
+                }
+              ]
+            }
+          }
+        ],
+        "PersonApplicant": [
+          {
+            "ApplicantType": "Borrower",
+            "Citizenship": "AU",
+            "CountryOfBirth": "AU",
+            "DateOfBirth": "1983-07-11",
+            "FirstHomeBuyer": "Yes",
+            "Gender": "Male",
+            "MaritalStatus": "Single",
+            "PrimaryApplicant": "Yes",
+            "UniqueID": "PA001-CHRIS",
+            "x_Household": "HOUSEHOLD-001",
+            "Contact": {
+              "CurrentAddress": {
+                "HousingStatus": "Renting",
+                "StartDate": "2010-04-24",
+                "x_ResidentialAddress": "ADDRESS-001"
+              },
+              "EmailAddress": [
+                {
+                  "Email": "chrisaustralianactorsassociation.com.au"
+                }
+              ],
+              "HomePhone": {
+                "AustralianDialingCode": "07",
+                "Number": "98765432"
+              },
+              "Mobile": {
+                "AustralianDialingCode": "04",
+                "Number": "11223344"
+              }
+            },
+            "Employment": [
+              {
+                "SelfEmployed": {
+                  "ANZSCOOccupationCode": "212112",
+                  "Occupation": "Film Producer",
+                  "x_Employer": "RELATEDCOMPANY-001",
+                  "BusinessIncomePrevious": {
+                    "ProfitAfterTax": 123000.0,
+                    "ProfitBeforeTax": 200000.0,
+                    "StartDate": "2017-01-07"
+                  },
+                  "BusinessIncomeRecent": {
+                    "ProfitAfterTax": 660000.0,
+                    "ProfitBeforeTax": 1000000.0,
+                    "StartDate": "2018-01-07"
+                  }
+                }
+              }
+            ],
+            "PersonName": {
+              "FirstName": "Christopher",
+              "NameTitle": "Mr",
+              "Surname": "Hemsworth"
+            }
+          },
+          {
+            "ApplicantType": "Borrower",
+            "Citizenship": "AU",
+            "CountryOfBirth": "AU",
+            "DateOfBirth": "1990-01-13",
+            "FirstHomeBuyer": "Yes",
+            "Gender": "Male",
+            "MaritalStatus": "Single",
+            "RelationshipToPrimaryApplicant": "Sibling",
+            "UniqueID": "PA002-LIAM",
+            "x_Household": "HOUSEHOLD-001",
+            "Contact": {
+              "CurrentAddress": {
+                "HousingStatus": "Renting",
+                "StartDate": "2010-04-24",
+                "x_ResidentialAddress": "ADDRESS-001"
+              },
+              "EmailAddress": [
+                {
+                  "Email": "liamaustralianactorsassociation.com.au"
+                }
+              ],
+              "HomePhone": {
+                "AustralianDialingCode": "07",
+                "Number": "98564534"
+              },
+              "Mobile": {
+                "AustralianDialingCode": "04",
+                "Number": "11223355"
+              }
+            },
+            "Employment": [
+              {
+                "SelfEmployed": {
+                  "ANZSCOOccupationCode": "212112",
+                  "Occupation": "Film Producer",
+                  "x_Employer": "RELATEDCOMPANY-001",
+                  "BusinessIncomePrevious": {
+                    "ProfitAfterTax": 66000.0,
+                    "ProfitBeforeTax": 100000.0,
+                    "StartDate": "2017-01-07"
+                  },
+                  "BusinessIncomeRecent": {
+                    "ProfitAfterTax": 330000.0,
+                    "ProfitBeforeTax": 500000.0,
+                    "StartDate": "2018-01-07"
+                  }
+                }
+              }
+            ],
+            "PersonName": {
+              "FirstName": "Liam",
+              "NameTitle": "Mr",
+              "Surname": "Hemsworth"
+            }
+          }
+        ],
+        "RealEstateAsset": [
+          {
+            "Transaction": "Owns",
+            "UniqueID": "REA001-INVESTMENT",
+            "EstimatedValue": {
+              "EstimateBasis": "Applicant Estimate",
+              "Value": 1200000.0
+            },
+            "PercentOwned": {
+              "Owner": [
+                {
+                  "Percent": 100.0,
+                  "x_Party": "PA001-CHRIS"
+                }
+              ]
+            }
+          },
+          {
+            "Occupancy": "Owner Primary",
+            "PrimaryPurpose": "Owner Occupied",
+            "Transaction": "Purchasing",
+            "UniqueID": "REA002-DOUBLEBAY",
+            "x_Address": "ADD002-DOUBLEBAY",
+            "EstimatedValue": {
+              "EstimateBasis": "Applicant Estimate",
+              "EstimateMethodology": "Current Market Value",
+              "Value": 9500000.0
+            }
+          }
+        ],
+        "RelatedCompany": [
+          {
+            "ABN": "12345678901",
+            "BusinessName": "Hemsworth Film Production",
+            "BusinessStructure": "Partnership",
+            "UniqueID": "RC001-HFPRODUCTION"
+          }
+        ]
+      }
+    },
+    "Instructions": {
+      "ApplicationInstructions": {
+        "Submit": {
+          "AssessmentType": "Indicative"
+        }
+      }
+    },
+    "Publisher": {
+      "LIXICode": "LIXIBRKR"
+    },
+    "Recipient": [
+      {
+        "LIXICode": "LIXIBANK"
+      }
+    ],
+    "SchemaVersion": {
+      "LIXITransactionType": "CAL",
+      "LIXIVersion": "2.6.52"
+    }
+  }
+}

@@ -1,0 +1,1191 @@
+{
+  "type": "record",
+  "name": "Credit Application Schema",
+  "fields": [
+    {
+      "name": "Package",
+      "type": {
+        "type": "record",
+        "name": "Package",
+        "fields": [
+          {
+            "name": "Content",
+            "type": {
+              "type": "record",
+              "name": "Package",
+              "namespace": "Content",
+              "fields": [
+                {
+                  "name": "Application",
+                  "type": {
+                    "type": "record",
+                    "name": "Package",
+                    "namespace": "Application.Content",
+                    "fields": [
+                      {
+                        "name": "Address",
+                        "type": {
+                          "type": "array",
+                          "items": {
+                            "type": "record",
+                            "name": "Package",
+                            "namespace": "Address.Application.Content",
+                            "fields": [
+                              {
+                                "name": "AustralianPostCode",
+                                "type": "string",
+                                "doc": "Type inferred from '\"3000\"'"
+                              },
+                              {
+                                "name": "AustralianState",
+                                "type": "string",
+                                "doc": "Type inferred from '\"VIC\"'"
+                              },
+                              {
+                                "name": "Country",
+                                "type": "string",
+                                "doc": "Type inferred from '\"AU\"'"
+                              },
+                              {
+                                "name": "Suburb",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Melbourne\"'"
+                              },
+                              {
+                                "name": "Type",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Standard\"'"
+                              },
+                              {
+                                "name": "UniqueID",
+                                "type": "string",
+                                "doc": "Type inferred from '\"ADDRESS-001\"'"
+                              },
+                              {
+                                "name": "Standard",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "Standard.Address.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "StreetName",
+                                      "type": "string",
+                                      "doc": "Type inferred from '\"Collins\"'"
+                                    },
+                                    {
+                                      "name": "StreetNumber",
+                                      "type": "string",
+                                      "doc": "Type inferred from '\"18\"'"
+                                    },
+                                    {
+                                      "name": "StreetType",
+                                      "type": "string",
+                                      "doc": "Type inferred from '\"Street\"'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"StreetName\":\"Collins\",\"StreetNumber\":\"18\",\"StreetType\":\"Street\"}'"
+                              }
+                            ]
+                          }
+                        },
+                        "doc": "Type inferred from '[{\"AustralianPostCode\":\"3000\",\"AustralianState\":\"VIC\",\"Country\":\"AU\",\"Suburb\":\"Melbourne\",\"Type\":\"Standard\",\"UniqueID\":\"ADDRESS-001\",\"Standard\":{\"StreetName\":\"Collins\",\"StreetNumber\":\"18\",\"StreetType\":\"Street\"}},{\"AustralianPostCode\":\"2028\",\"AustralianState\":\"NSW\",\"Country\":\"AU\",\"Suburb\":\"Double Bay\",\"Type\":\"Standard\",\"UniqueID\":\"ADD002-DOUBLEBAY\",\"Standard\":{\"StreetName\":\"Ocean\",\"StreetNumber\":\"100\",\"StreetType\":\"Avenue\"}}]'"
+                      },
+                      {
+                        "name": "Household",
+                        "type": {
+                          "type": "array",
+                          "items": {
+                            "type": "record",
+                            "name": "Package",
+                            "namespace": "Household.Application.Content",
+                            "fields": [
+                              {
+                                "name": "NumberOfAdults",
+                                "type": "int",
+                                "doc": "Type inferred from '2'"
+                              },
+                              {
+                                "name": "NumberOfDependants",
+                                "type": "int",
+                                "doc": "Type inferred from '0'"
+                              },
+                              {
+                                "name": "UniqueID",
+                                "type": "string",
+                                "doc": "Type inferred from '\"HOUSEHOLD-001\"'"
+                              },
+                              {
+                                "name": "ExpenseDetails",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "ExpenseDetails.Household.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "LivingExpense",
+                                      "type": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "record",
+                                          "name": "Package",
+                                          "namespace": "LivingExpense.ExpenseDetails.Household.Application.Content",
+                                          "fields": [
+                                            {
+                                              "name": "Amount",
+                                              "type": "double",
+                                              "doc": "Type inferred from '350.0'"
+                                            },
+                                            {
+                                              "name": "Category",
+                                              "type": "string",
+                                              "doc": "Type inferred from '\"Groceries\"'"
+                                            },
+                                            {
+                                              "name": "Frequency",
+                                              "type": "string",
+                                              "doc": "Type inferred from '\"Weekly\"'"
+                                            },
+                                            {
+                                              "name": "UniqueID",
+                                              "type": "string",
+                                              "doc": "Type inferred from '\"LE001-GROCERIES\"'"
+                                            },
+                                            {
+                                              "name": "PercentResponsible",
+                                              "type": {
+                                                "type": "record",
+                                                "name": "Package",
+                                                "namespace": "PercentResponsible.LivingExpense.ExpenseDetails.Household.Application.Content",
+                                                "fields": [
+                                                  {
+                                                    "name": "Owner",
+                                                    "type": {
+                                                      "type": "array",
+                                                      "items": {
+                                                        "type": "record",
+                                                        "name": "Package",
+                                                        "namespace": "Owner.PercentResponsible.LivingExpense.ExpenseDetails.Household.Application.Content",
+                                                        "fields": [
+                                                          {
+                                                            "name": "Percent",
+                                                            "type": "double",
+                                                            "doc": "Type inferred from '50.0'"
+                                                          },
+                                                          {
+                                                            "name": "x_Party",
+                                                            "type": "string",
+                                                            "doc": "Type inferred from '\"PA001-CHRIS\"'"
+                                                          }
+                                                        ]
+                                                      }
+                                                    },
+                                                    "doc": "Type inferred from '[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]'"
+                                                  }
+                                                ]
+                                              },
+                                              "doc": "Type inferred from '{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}'"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "doc": "Type inferred from '[{\"Amount\":350.0,\"Category\":\"Groceries\",\"Frequency\":\"Weekly\",\"UniqueID\":\"LE001-GROCERIES\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}},{\"Amount\":1500.0,\"Category\":\"Investment Property Running Costs\",\"Frequency\":\"Monthly\",\"UniqueID\":\"LE002-INVESTMENT-CHRIS\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]}}]'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"LivingExpense\":[{\"Amount\":350.0,\"Category\":\"Groceries\",\"Frequency\":\"Weekly\",\"UniqueID\":\"LE001-GROCERIES\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}},{\"Amount\":1500.0,\"Category\":\"Investment Property Running Costs\",\"Frequency\":\"Monthly\",\"UniqueID\":\"LE002-INVESTMENT-CHRIS\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]}}]}'"
+                              }
+                            ]
+                          }
+                        },
+                        "doc": "Type inferred from '[{\"NumberOfAdults\":2,\"NumberOfDependants\":0,\"UniqueID\":\"HOUSEHOLD-001\",\"ExpenseDetails\":{\"LivingExpense\":[{\"Amount\":350.0,\"Category\":\"Groceries\",\"Frequency\":\"Weekly\",\"UniqueID\":\"LE001-GROCERIES\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}},{\"Amount\":1500.0,\"Category\":\"Investment Property Running Costs\",\"Frequency\":\"Monthly\",\"UniqueID\":\"LE002-INVESTMENT-CHRIS\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]}}]}}]'"
+                      },
+                      {
+                        "name": "Liability",
+                        "type": {
+                          "type": "array",
+                          "items": {
+                            "type": "record",
+                            "name": "Package",
+                            "namespace": "Liability.Application.Content",
+                            "fields": [
+                              {
+                                "name": "AnnualInterestRate",
+                                "type": "double",
+                                "doc": "Type inferred from '3.75'"
+                              },
+                              {
+                                "name": "OriginalAmount",
+                                "type": "double",
+                                "doc": "Type inferred from '200000.0'"
+                              },
+                              {
+                                "name": "OriginalLoanPurpose",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Personal\"'"
+                              },
+                              {
+                                "name": "OutstandingBalance",
+                                "type": "double",
+                                "doc": "Type inferred from '90000.0'"
+                              },
+                              {
+                                "name": "Type",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Car Loan\"'"
+                              },
+                              {
+                                "name": "PercentOwned",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "PercentOwned.Liability.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "Owner",
+                                      "type": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "record",
+                                          "name": "Package",
+                                          "namespace": "Owner.PercentOwned.Liability.Application.Content",
+                                          "fields": [
+                                            {
+                                              "name": "Percent",
+                                              "type": "double",
+                                              "doc": "Type inferred from '50.0'"
+                                            },
+                                            {
+                                              "name": "x_Party",
+                                              "type": "string",
+                                              "doc": "Type inferred from '\"PA001-CHRIS\"'"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "doc": "Type inferred from '[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}'"
+                              },
+                              {
+                                "name": "RemainingTerm",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "RemainingTerm.Liability.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "Duration",
+                                      "type": "int",
+                                      "doc": "Type inferred from '32'"
+                                    },
+                                    {
+                                      "name": "Units",
+                                      "type": "string",
+                                      "doc": "Type inferred from '\"Months\"'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"Duration\":32,\"Units\":\"Months\"}'"
+                              },
+                              {
+                                "name": "Repayment",
+                                "type": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "record",
+                                    "name": "Package",
+                                    "namespace": "Repayment.Liability.Application.Content",
+                                    "fields": [
+                                      {
+                                        "name": "RepaymentAmount",
+                                        "type": "double",
+                                        "doc": "Type inferred from '3000.0'"
+                                      },
+                                      {
+                                        "name": "RepaymentFrequency",
+                                        "type": "string",
+                                        "doc": "Type inferred from '\"Monthly\"'"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "doc": "Type inferred from '[{\"RepaymentAmount\":3000.0,\"RepaymentFrequency\":\"Monthly\"}]'"
+                              }
+                            ]
+                          }
+                        },
+                        "doc": "Type inferred from '[{\"AnnualInterestRate\":3.75,\"OriginalAmount\":200000.0,\"OriginalLoanPurpose\":\"Personal\",\"OutstandingBalance\":90000.0,\"Type\":\"Car Loan\",\"PercentOwned\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]},\"RemainingTerm\":{\"Duration\":32,\"Units\":\"Months\"},\"Repayment\":[{\"RepaymentAmount\":3000.0,\"RepaymentFrequency\":\"Monthly\"}]}]'"
+                      },
+                      {
+                        "name": "LoanDetails",
+                        "type": {
+                          "type": "array",
+                          "items": {
+                            "type": "record",
+                            "name": "Package",
+                            "namespace": "LoanDetails.Application.Content",
+                            "fields": [
+                              {
+                                "name": "AmountRequested",
+                                "type": "double",
+                                "doc": "Type inferred from '5500000.0'"
+                              },
+                              {
+                                "name": "LoanType",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Amortising Home Loan\"'"
+                              },
+                              {
+                                "name": "Borrowers",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "Borrowers.LoanDetails.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "Owner",
+                                      "type": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "record",
+                                          "name": "Package",
+                                          "namespace": "Owner.Borrowers.LoanDetails.Application.Content",
+                                          "fields": [
+                                            {
+                                              "name": "Percent",
+                                              "type": "double",
+                                              "doc": "Type inferred from '100.0'"
+                                            },
+                                            {
+                                              "name": "x_Party",
+                                              "type": "string",
+                                              "doc": "Type inferred from '\"PA001-CHRIS\"'"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "doc": "Type inferred from '[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":100.0,\"x_Party\":\"PA002-LIAM\"}]'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":100.0,\"x_Party\":\"PA002-LIAM\"}]}'"
+                              },
+                              {
+                                "name": "LendingPurpose",
+                                "type": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "record",
+                                    "name": "Package",
+                                    "namespace": "LendingPurpose.LoanDetails.Application.Content",
+                                    "fields": [
+                                      {
+                                        "name": "IncludesRefinancing",
+                                        "type": "string",
+                                        "doc": "Type inferred from '\"No\"'"
+                                      },
+                                      {
+                                        "name": "LenderCode",
+                                        "type": "string",
+                                        "doc": "Type inferred from '\"NewPurchase\"'"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "doc": "Type inferred from '[{\"IncludesRefinancing\":\"No\",\"LenderCode\":\"NewPurchase\"}]'"
+                              },
+                              {
+                                "name": "LoanPurpose",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "LoanPurpose.LoanDetails.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "PrimaryPurpose",
+                                      "type": "string",
+                                      "doc": "Type inferred from '\"Owner Occupied\"'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"PrimaryPurpose\":\"Owner Occupied\"}'"
+                              },
+                              {
+                                "name": "ProposedRepayment",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "ProposedRepayment.LoanDetails.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "RegularRepayment",
+                                      "type": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "record",
+                                          "name": "Package",
+                                          "namespace": "RegularRepayment.ProposedRepayment.LoanDetails.Application.Content",
+                                          "fields": [
+                                            {
+                                              "name": "Amount",
+                                              "type": "double",
+                                              "doc": "Type inferred from '12000.0'"
+                                            },
+                                            {
+                                              "name": "Frequency",
+                                              "type": "string",
+                                              "doc": "Type inferred from '\"Fortnightly\"'"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "doc": "Type inferred from '[{\"Amount\":12000.0,\"Frequency\":\"Fortnightly\"}]'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"RegularRepayment\":[{\"Amount\":12000.0,\"Frequency\":\"Fortnightly\"}]}'"
+                              },
+                              {
+                                "name": "Security",
+                                "type": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "record",
+                                    "name": "Package",
+                                    "namespace": "Security.LoanDetails.Application.Content",
+                                    "fields": [
+                                      {
+                                        "name": "x_Security",
+                                        "type": "string",
+                                        "doc": "Type inferred from '\"REA002-DOUBLEBAY\"'"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "doc": "Type inferred from '[{\"x_Security\":\"REA002-DOUBLEBAY\"}]'"
+                              },
+                              {
+                                "name": "Term",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "Term.LoanDetails.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "TotalTermDuration",
+                                      "type": "int",
+                                      "doc": "Type inferred from '25'"
+                                    },
+                                    {
+                                      "name": "TotalTermUnits",
+                                      "type": "string",
+                                      "doc": "Type inferred from '\"Years\"'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"TotalTermDuration\":25,\"TotalTermUnits\":\"Years\"}'"
+                              }
+                            ]
+                          }
+                        },
+                        "doc": "Type inferred from '[{\"AmountRequested\":5500000.0,\"LoanType\":\"Amortising Home Loan\",\"Borrowers\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":100.0,\"x_Party\":\"PA002-LIAM\"}]},\"LendingPurpose\":[{\"IncludesRefinancing\":\"No\",\"LenderCode\":\"NewPurchase\"}],\"LoanPurpose\":{\"PrimaryPurpose\":\"Owner Occupied\"},\"ProposedRepayment\":{\"RegularRepayment\":[{\"Amount\":12000.0,\"Frequency\":\"Fortnightly\"}]},\"Security\":[{\"x_Security\":\"REA002-DOUBLEBAY\"}],\"Term\":{\"TotalTermDuration\":25,\"TotalTermUnits\":\"Years\"}}]'"
+                      },
+                      {
+                        "name": "NonRealEstateAsset",
+                        "type": {
+                          "type": "array",
+                          "items": {
+                            "type": "record",
+                            "name": "Package",
+                            "namespace": "NonRealEstateAsset.Application.Content",
+                            "fields": [
+                              {
+                                "name": "Transaction",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Owns\"'"
+                              },
+                              {
+                                "name": "Type",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Motor Vehicle and Transport\"'"
+                              },
+                              {
+                                "name": "UniqueID",
+                                "type": "string",
+                                "doc": "Type inferred from '\"NREA001-FERRARI\"'"
+                              },
+                              {
+                                "name": "EstimatedValue",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "EstimatedValue.NonRealEstateAsset.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "EstimateBasis",
+                                      "type": "string",
+                                      "doc": "Type inferred from '\"Applicant Estimate\"'"
+                                    },
+                                    {
+                                      "name": "Value",
+                                      "type": "double",
+                                      "doc": "Type inferred from '220000.0'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":220000.0}'"
+                              },
+                              {
+                                "name": "MotorVehicle",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "record",
+                                    "name": "Package",
+                                    "namespace": "MotorVehicle.NonRealEstateAsset.Application.Content",
+                                    "fields": [
+                                      {
+                                        "name": "Make",
+                                        "type": "string",
+                                        "doc": "Type inferred from '\"Ferrari\"'"
+                                      },
+                                      {
+                                        "name": "Model",
+                                        "type": "string",
+                                        "doc": "Type inferred from '\"Testarossa\"'"
+                                      },
+                                      {
+                                        "name": "RegistrationNumber",
+                                        "type": "string",
+                                        "doc": "Type inferred from '\"THOR\"'"
+                                      },
+                                      {
+                                        "name": "Year",
+                                        "type": "string",
+                                        "doc": "Type inferred from '\"1984\"'"
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "doc": "Type inferred from '{\"Make\":\"Ferrari\",\"Model\":\"Testarossa\",\"RegistrationNumber\":\"THOR\",\"Year\":\"1984\"}'",
+                                "default": null
+                              },
+                              {
+                                "name": "PercentOwned",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "PercentOwned.NonRealEstateAsset.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "Owner",
+                                      "type": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "record",
+                                          "name": "Package",
+                                          "namespace": "Owner.PercentOwned.NonRealEstateAsset.Application.Content",
+                                          "fields": [
+                                            {
+                                              "name": "Percent",
+                                              "type": "double",
+                                              "doc": "Type inferred from '50.0'"
+                                            },
+                                            {
+                                              "name": "x_Party",
+                                              "type": "string",
+                                              "doc": "Type inferred from '\"PA001-CHRIS\"'"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "doc": "Type inferred from '[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}'"
+                              },
+                              {
+                                "name": "FinancialAsset",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "record",
+                                    "name": "Package",
+                                    "namespace": "FinancialAsset.NonRealEstateAsset.Application.Content",
+                                    "fields": [
+                                      {
+                                        "name": "Type",
+                                        "type": "string",
+                                        "doc": "Type inferred from '\"Savings Account\"'"
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "doc": "Type inferred from '{\"Type\":\"Savings Account\"}'",
+                                "default": null
+                              }
+                            ]
+                          }
+                        },
+                        "doc": "Type inferred from '[{\"Transaction\":\"Owns\",\"Type\":\"Motor Vehicle and Transport\",\"UniqueID\":\"NREA001-FERRARI\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":220000.0},\"MotorVehicle\":{\"Make\":\"Ferrari\",\"Model\":\"Testarossa\",\"RegistrationNumber\":\"THOR\",\"Year\":\"1984\"},\"PercentOwned\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}},{\"Transaction\":\"Owns\",\"Type\":\"Financial Asset\",\"UniqueID\":\"NREA003-SAVINGS\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":4000000.0},\"FinancialAsset\":{\"Type\":\"Savings Account\"},\"PercentOwned\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA002-LIAM\"}]}}]'"
+                      },
+                      {
+                        "name": "PersonApplicant",
+                        "type": {
+                          "type": "array",
+                          "items": {
+                            "type": "record",
+                            "name": "Package",
+                            "namespace": "PersonApplicant.Application.Content",
+                            "fields": [
+                              {
+                                "name": "ApplicantType",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Borrower\"'"
+                              },
+                              {
+                                "name": "Citizenship",
+                                "type": "string",
+                                "doc": "Type inferred from '\"AU\"'"
+                              },
+                              {
+                                "name": "CountryOfBirth",
+                                "type": "string",
+                                "doc": "Type inferred from '\"AU\"'"
+                              },
+                              {
+                                "name": "DateOfBirth",
+                                "type": "string",
+                                "doc": "Type inferred from '\"1983-07-11\"'"
+                              },
+                              {
+                                "name": "FirstHomeBuyer",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Yes\"'"
+                              },
+                              {
+                                "name": "Gender",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Male\"'"
+                              },
+                              {
+                                "name": "MaritalStatus",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Single\"'"
+                              },
+                              {
+                                "name": "PrimaryApplicant",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "doc": "Type inferred from '\"Yes\"'",
+                                "default": null
+                              },
+                              {
+                                "name": "UniqueID",
+                                "type": "string",
+                                "doc": "Type inferred from '\"PA001-CHRIS\"'"
+                              },
+                              {
+                                "name": "x_Household",
+                                "type": "string",
+                                "doc": "Type inferred from '\"HOUSEHOLD-001\"'"
+                              },
+                              {
+                                "name": "Contact",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "Contact.PersonApplicant.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "CurrentAddress",
+                                      "type": {
+                                        "type": "record",
+                                        "name": "Package",
+                                        "namespace": "CurrentAddress.Contact.PersonApplicant.Application.Content",
+                                        "fields": [
+                                          {
+                                            "name": "HousingStatus",
+                                            "type": "string",
+                                            "doc": "Type inferred from '\"Renting\"'"
+                                          },
+                                          {
+                                            "name": "StartDate",
+                                            "type": "string",
+                                            "doc": "Type inferred from '\"2010-04-24\"'"
+                                          },
+                                          {
+                                            "name": "x_ResidentialAddress",
+                                            "type": "string",
+                                            "doc": "Type inferred from '\"ADDRESS-001\"'"
+                                          }
+                                        ]
+                                      },
+                                      "doc": "Type inferred from '{\"HousingStatus\":\"Renting\",\"StartDate\":\"2010-04-24\",\"x_ResidentialAddress\":\"ADDRESS-001\"}'"
+                                    },
+                                    {
+                                      "name": "EmailAddress",
+                                      "type": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "record",
+                                          "name": "Package",
+                                          "namespace": "EmailAddress.Contact.PersonApplicant.Application.Content",
+                                          "fields": [
+                                            {
+                                              "name": "Email",
+                                              "type": "string",
+                                              "doc": "Type inferred from '\"chrisaustralianactorsassociation.com.au\"'"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "doc": "Type inferred from '[{\"Email\":\"chrisaustralianactorsassociation.com.au\"}]'"
+                                    },
+                                    {
+                                      "name": "HomePhone",
+                                      "type": {
+                                        "type": "record",
+                                        "name": "Package",
+                                        "namespace": "HomePhone.Contact.PersonApplicant.Application.Content",
+                                        "fields": [
+                                          {
+                                            "name": "AustralianDialingCode",
+                                            "type": "string",
+                                            "doc": "Type inferred from '\"07\"'"
+                                          },
+                                          {
+                                            "name": "Number",
+                                            "type": "string",
+                                            "doc": "Type inferred from '\"98765432\"'"
+                                          }
+                                        ]
+                                      },
+                                      "doc": "Type inferred from '{\"AustralianDialingCode\":\"07\",\"Number\":\"98765432\"}'"
+                                    },
+                                    {
+                                      "name": "Mobile",
+                                      "type": {
+                                        "type": "record",
+                                        "name": "Package",
+                                        "namespace": "Mobile.Contact.PersonApplicant.Application.Content",
+                                        "fields": [
+                                          {
+                                            "name": "AustralianDialingCode",
+                                            "type": "string",
+                                            "doc": "Type inferred from '\"04\"'"
+                                          },
+                                          {
+                                            "name": "Number",
+                                            "type": "string",
+                                            "doc": "Type inferred from '\"11223344\"'"
+                                          }
+                                        ]
+                                      },
+                                      "doc": "Type inferred from '{\"AustralianDialingCode\":\"04\",\"Number\":\"11223344\"}'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"CurrentAddress\":{\"HousingStatus\":\"Renting\",\"StartDate\":\"2010-04-24\",\"x_ResidentialAddress\":\"ADDRESS-001\"},\"EmailAddress\":[{\"Email\":\"chrisaustralianactorsassociation.com.au\"}],\"HomePhone\":{\"AustralianDialingCode\":\"07\",\"Number\":\"98765432\"},\"Mobile\":{\"AustralianDialingCode\":\"04\",\"Number\":\"11223344\"}}'"
+                              },
+                              {
+                                "name": "Employment",
+                                "type": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "record",
+                                    "name": "Package",
+                                    "namespace": "Employment.PersonApplicant.Application.Content",
+                                    "fields": [
+                                      {
+                                        "name": "SelfEmployed",
+                                        "type": {
+                                          "type": "record",
+                                          "name": "Package",
+                                          "namespace": "SelfEmployed.Employment.PersonApplicant.Application.Content",
+                                          "fields": [
+                                            {
+                                              "name": "ANZSCOOccupationCode",
+                                              "type": "string",
+                                              "doc": "Type inferred from '\"212112\"'"
+                                            },
+                                            {
+                                              "name": "Occupation",
+                                              "type": "string",
+                                              "doc": "Type inferred from '\"Film Producer\"'"
+                                            },
+                                            {
+                                              "name": "x_Employer",
+                                              "type": "string",
+                                              "doc": "Type inferred from '\"RELATEDCOMPANY-001\"'"
+                                            },
+                                            {
+                                              "name": "BusinessIncomePrevious",
+                                              "type": {
+                                                "type": "record",
+                                                "name": "Package",
+                                                "namespace": "BusinessIncomePrevious.SelfEmployed.Employment.PersonApplicant.Application.Content",
+                                                "fields": [
+                                                  {
+                                                    "name": "ProfitAfterTax",
+                                                    "type": "double",
+                                                    "doc": "Type inferred from '123000.0'"
+                                                  },
+                                                  {
+                                                    "name": "ProfitBeforeTax",
+                                                    "type": "double",
+                                                    "doc": "Type inferred from '200000.0'"
+                                                  },
+                                                  {
+                                                    "name": "StartDate",
+                                                    "type": "string",
+                                                    "doc": "Type inferred from '\"2017-01-07\"'"
+                                                  }
+                                                ]
+                                              },
+                                              "doc": "Type inferred from '{\"ProfitAfterTax\":123000.0,\"ProfitBeforeTax\":200000.0,\"StartDate\":\"2017-01-07\"}'"
+                                            },
+                                            {
+                                              "name": "BusinessIncomeRecent",
+                                              "type": {
+                                                "type": "record",
+                                                "name": "Package",
+                                                "namespace": "BusinessIncomeRecent.SelfEmployed.Employment.PersonApplicant.Application.Content",
+                                                "fields": [
+                                                  {
+                                                    "name": "ProfitAfterTax",
+                                                    "type": "double",
+                                                    "doc": "Type inferred from '660000.0'"
+                                                  },
+                                                  {
+                                                    "name": "ProfitBeforeTax",
+                                                    "type": "double",
+                                                    "doc": "Type inferred from '1000000.0'"
+                                                  },
+                                                  {
+                                                    "name": "StartDate",
+                                                    "type": "string",
+                                                    "doc": "Type inferred from '\"2018-01-07\"'"
+                                                  }
+                                                ]
+                                              },
+                                              "doc": "Type inferred from '{\"ProfitAfterTax\":660000.0,\"ProfitBeforeTax\":1000000.0,\"StartDate\":\"2018-01-07\"}'"
+                                            }
+                                          ]
+                                        },
+                                        "doc": "Type inferred from '{\"ANZSCOOccupationCode\":\"212112\",\"Occupation\":\"Film Producer\",\"x_Employer\":\"RELATEDCOMPANY-001\",\"BusinessIncomePrevious\":{\"ProfitAfterTax\":123000.0,\"ProfitBeforeTax\":200000.0,\"StartDate\":\"2017-01-07\"},\"BusinessIncomeRecent\":{\"ProfitAfterTax\":660000.0,\"ProfitBeforeTax\":1000000.0,\"StartDate\":\"2018-01-07\"}}'"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "doc": "Type inferred from '[{\"SelfEmployed\":{\"ANZSCOOccupationCode\":\"212112\",\"Occupation\":\"Film Producer\",\"x_Employer\":\"RELATEDCOMPANY-001\",\"BusinessIncomePrevious\":{\"ProfitAfterTax\":123000.0,\"ProfitBeforeTax\":200000.0,\"StartDate\":\"2017-01-07\"},\"BusinessIncomeRecent\":{\"ProfitAfterTax\":660000.0,\"ProfitBeforeTax\":1000000.0,\"StartDate\":\"2018-01-07\"}}}]'"
+                              },
+                              {
+                                "name": "PersonName",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "PersonName.PersonApplicant.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "FirstName",
+                                      "type": "string",
+                                      "doc": "Type inferred from '\"Christopher\"'"
+                                    },
+                                    {
+                                      "name": "NameTitle",
+                                      "type": "string",
+                                      "doc": "Type inferred from '\"Mr\"'"
+                                    },
+                                    {
+                                      "name": "Surname",
+                                      "type": "string",
+                                      "doc": "Type inferred from '\"Hemsworth\"'"
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"FirstName\":\"Christopher\",\"NameTitle\":\"Mr\",\"Surname\":\"Hemsworth\"}'"
+                              },
+                              {
+                                "name": "RelationshipToPrimaryApplicant",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "doc": "Type inferred from '\"Sibling\"'",
+                                "default": null
+                              }
+                            ]
+                          }
+                        },
+                        "doc": "Type inferred from '[{\"ApplicantType\":\"Borrower\",\"Citizenship\":\"AU\",\"CountryOfBirth\":\"AU\",\"DateOfBirth\":\"1983-07-11\",\"FirstHomeBuyer\":\"Yes\",\"Gender\":\"Male\",\"MaritalStatus\":\"Single\",\"PrimaryApplicant\":\"Yes\",\"UniqueID\":\"PA001-CHRIS\",\"x_Household\":\"HOUSEHOLD-001\",\"Contact\":{\"CurrentAddress\":{\"HousingStatus\":\"Renting\",\"StartDate\":\"2010-04-24\",\"x_ResidentialAddress\":\"ADDRESS-001\"},\"EmailAddress\":[{\"Email\":\"chrisaustralianactorsassociation.com.au\"}],\"HomePhone\":{\"AustralianDialingCode\":\"07\",\"Number\":\"98765432\"},\"Mobile\":{\"AustralianDialingCode\":\"04\",\"Number\":\"11223344\"}},\"Employment\":[{\"SelfEmployed\":{\"ANZSCOOccupationCode\":\"212112\",\"Occupation\":\"Film Producer\",\"x_Employer\":\"RELATEDCOMPANY-001\",\"BusinessIncomePrevious\":{\"ProfitAfterTax\":123000.0,\"ProfitBeforeTax\":200000.0,\"StartDate\":\"2017-01-07\"},\"BusinessIncomeRecent\":{\"ProfitAfterTax\":660000.0,\"ProfitBeforeTax\":1000000.0,\"StartDate\":\"2018-01-07\"}}}],\"PersonName\":{\"FirstName\":\"Christopher\",\"NameTitle\":\"Mr\",\"Surname\":\"Hemsworth\"}},{\"ApplicantType\":\"Borrower\",\"Citizenship\":\"AU\",\"CountryOfBirth\":\"AU\",\"DateOfBirth\":\"1990-01-13\",\"FirstHomeBuyer\":\"Yes\",\"Gender\":\"Male\",\"MaritalStatus\":\"Single\",\"RelationshipToPrimaryApplicant\":\"Sibling\",\"UniqueID\":\"PA002-LIAM\",\"x_Household\":\"HOUSEHOLD-001\",\"Contact\":{\"CurrentAddress\":{\"HousingStatus\":\"Renting\",\"StartDate\":\"2010-04-24\",\"x_ResidentialAddress\":\"ADDRESS-001\"},\"EmailAddress\":[{\"Email\":\"liamaustralianactorsassociation.com.au\"}],\"HomePhone\":{\"AustralianDialingCode\":\"07\",\"Number\":\"98564534\"},\"Mobile\":{\"AustralianDialingCode\":\"04\",\"Number\":\"11223355\"}},\"Employment\":[{\"SelfEmployed\":{\"ANZSCOOccupationCode\":\"212112\",\"Occupation\":\"Film Producer\",\"x_Employer\":\"RELATEDCOMPANY-001\",\"BusinessIncomePrevious\":{\"ProfitAfterTax\":66000.0,\"ProfitBeforeTax\":100000.0,\"StartDate\":\"2017-01-07\"},\"BusinessIncomeRecent\":{\"ProfitAfterTax\":330000.0,\"ProfitBeforeTax\":500000.0,\"StartDate\":\"2018-01-07\"}}}],\"PersonName\":{\"FirstName\":\"Liam\",\"NameTitle\":\"Mr\",\"Surname\":\"Hemsworth\"}}]'"
+                      },
+                      {
+                        "name": "RealEstateAsset",
+                        "type": {
+                          "type": "array",
+                          "items": {
+                            "type": "record",
+                            "name": "Package",
+                            "namespace": "RealEstateAsset.Application.Content",
+                            "fields": [
+                              {
+                                "name": "Transaction",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Owns\"'"
+                              },
+                              {
+                                "name": "UniqueID",
+                                "type": "string",
+                                "doc": "Type inferred from '\"REA001-INVESTMENT\"'"
+                              },
+                              {
+                                "name": "EstimatedValue",
+                                "type": {
+                                  "type": "record",
+                                  "name": "Package",
+                                  "namespace": "EstimatedValue.RealEstateAsset.Application.Content",
+                                  "fields": [
+                                    {
+                                      "name": "EstimateBasis",
+                                      "type": "string",
+                                      "doc": "Type inferred from '\"Applicant Estimate\"'"
+                                    },
+                                    {
+                                      "name": "Value",
+                                      "type": "double",
+                                      "doc": "Type inferred from '1200000.0'"
+                                    },
+                                    {
+                                      "name": "EstimateMethodology",
+                                      "type": [
+                                        "null",
+                                        "string"
+                                      ],
+                                      "doc": "Type inferred from '\"Current Market Value\"'",
+                                      "default": null
+                                    }
+                                  ]
+                                },
+                                "doc": "Type inferred from '{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":1200000.0}'"
+                              },
+                              {
+                                "name": "PercentOwned",
+                                "type": [
+                                  "null",
+                                  {
+                                    "type": "record",
+                                    "name": "Package",
+                                    "namespace": "PercentOwned.RealEstateAsset.Application.Content",
+                                    "fields": [
+                                      {
+                                        "name": "Owner",
+                                        "type": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "record",
+                                            "name": "Package",
+                                            "namespace": "Owner.PercentOwned.RealEstateAsset.Application.Content",
+                                            "fields": [
+                                              {
+                                                "name": "Percent",
+                                                "type": "double",
+                                                "doc": "Type inferred from '100.0'"
+                                              },
+                                              {
+                                                "name": "x_Party",
+                                                "type": "string",
+                                                "doc": "Type inferred from '\"PA001-CHRIS\"'"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "doc": "Type inferred from '[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]'"
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "doc": "Type inferred from '{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]}'",
+                                "default": null
+                              },
+                              {
+                                "name": "Occupancy",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "doc": "Type inferred from '\"Owner Primary\"'",
+                                "default": null
+                              },
+                              {
+                                "name": "PrimaryPurpose",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "doc": "Type inferred from '\"Owner Occupied\"'",
+                                "default": null
+                              },
+                              {
+                                "name": "x_Address",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "doc": "Type inferred from '\"ADD002-DOUBLEBAY\"'",
+                                "default": null
+                              }
+                            ]
+                          }
+                        },
+                        "doc": "Type inferred from '[{\"Transaction\":\"Owns\",\"UniqueID\":\"REA001-INVESTMENT\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":1200000.0},\"PercentOwned\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]}},{\"Occupancy\":\"Owner Primary\",\"PrimaryPurpose\":\"Owner Occupied\",\"Transaction\":\"Purchasing\",\"UniqueID\":\"REA002-DOUBLEBAY\",\"x_Address\":\"ADD002-DOUBLEBAY\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"EstimateMethodology\":\"Current Market Value\",\"Value\":9500000.0}}]'"
+                      },
+                      {
+                        "name": "RelatedCompany",
+                        "type": {
+                          "type": "array",
+                          "items": {
+                            "type": "record",
+                            "name": "Package",
+                            "namespace": "RelatedCompany.Application.Content",
+                            "fields": [
+                              {
+                                "name": "ABN",
+                                "type": "string",
+                                "doc": "Type inferred from '\"12345678901\"'"
+                              },
+                              {
+                                "name": "BusinessName",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Hemsworth Film Production\"'"
+                              },
+                              {
+                                "name": "BusinessStructure",
+                                "type": "string",
+                                "doc": "Type inferred from '\"Partnership\"'"
+                              },
+                              {
+                                "name": "UniqueID",
+                                "type": "string",
+                                "doc": "Type inferred from '\"RC001-HFPRODUCTION\"'"
+                              }
+                            ]
+                          }
+                        },
+                        "doc": "Type inferred from '[{\"ABN\":\"12345678901\",\"BusinessName\":\"Hemsworth Film Production\",\"BusinessStructure\":\"Partnership\",\"UniqueID\":\"RC001-HFPRODUCTION\"}]'"
+                      }
+                    ]
+                  },
+                  "doc": "Type inferred from '{\"Address\":[{\"AustralianPostCode\":\"3000\",\"AustralianState\":\"VIC\",\"Country\":\"AU\",\"Suburb\":\"Melbourne\",\"Type\":\"Standard\",\"UniqueID\":\"ADDRESS-001\",\"Standard\":{\"StreetName\":\"Collins\",\"StreetNumber\":\"18\",\"StreetType\":\"Street\"}},{\"AustralianPostCode\":\"2028\",\"AustralianState\":\"NSW\",\"Country\":\"AU\",\"Suburb\":\"Double Bay\",\"Type\":\"Standard\",\"UniqueID\":\"ADD002-DOUBLEBAY\",\"Standard\":{\"StreetName\":\"Ocean\",\"StreetNumber\":\"100\",\"StreetType\":\"Avenue\"}}],\"Household\":[{\"NumberOfAdults\":2,\"NumberOfDependants\":0,\"UniqueID\":\"HOUSEHOLD-001\",\"ExpenseDetails\":{\"LivingExpense\":[{\"Amount\":350.0,\"Category\":\"Groceries\",\"Frequency\":\"Weekly\",\"UniqueID\":\"LE001-GROCERIES\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}},{\"Amount\":1500.0,\"Category\":\"Investment Property Running Costs\",\"Frequency\":\"Monthly\",\"UniqueID\":\"LE002-INVESTMENT-CHRIS\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]}}]}}],\"Liability\":[{\"AnnualInterestRate\":3.75,\"OriginalAmount\":200000.0,\"OriginalLoanPurpose\":\"Personal\",\"OutstandingBalance\":90000.0,\"Type\":\"Car Loan\",\"PercentOwned\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]},\"RemainingTerm\":{\"Duration\":32,\"Units\":\"Months\"},\"Repayment\":[{\"RepaymentAmount\":3000.0,\"RepaymentFrequency\":\"Monthly\"}]}],\"LoanDetails\":[{\"AmountRequested\":5500000.0,\"LoanType\":\"Amortising Home Loan\",\"Borrowers\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":100.0,\"x_Party\":\"PA002-LIAM\"}]},\"LendingPurpose\":[{\"IncludesRefinancing\":\"No\",\"LenderCode\":\"NewPurchase\"}],\"LoanPurpose\":{\"PrimaryPurpose\":\"Owner Occupied\"},\"ProposedRepayment\":{\"RegularRepayment\":[{\"Amount\":12000.0,\"Frequency\":\"Fortnightly\"}]},\"Security\":[{\"x_Security\":\"REA002-DOUBLEBAY\"}],\"Term\":{\"TotalTermDuration\":25,\"TotalTermUnits\":\"Years\"}}],\"NonRealEstateAsset\":[{\"Transaction\":\"Owns\",\"Type\":\"Motor Vehicle and Transport\",\"UniqueID\":\"NREA001-FERRARI\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":220000.0},\"MotorVehicle\":{\"Make\":\"Ferrari\",\"Model\":\"Testarossa\",\"RegistrationNumber\":\"THOR\",\"Year\":\"1984\"},\"PercentOwned\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}},{\"Transaction\":\"Owns\",\"Type\":\"Financial Asset\",\"UniqueID\":\"NREA003-SAVINGS\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":4000000.0},\"FinancialAsset\":{\"Type\":\"Savings Account\"},\"PercentOwned\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA002-LIAM\"}]}}],\"PersonApplicant\":[{\"ApplicantType\":\"Borrower\",\"Citizenship\":\"AU\",\"CountryOfBirth\":\"AU\",\"DateOfBirth\":\"1983-07-11\",\"FirstHomeBuyer\":\"Yes\",\"Gender\":\"Male\",\"MaritalStatus\":\"Single\",\"PrimaryApplicant\":\"Yes\",\"UniqueID\":\"PA001-CHRIS\",\"x_Household\":\"HOUSEHOLD-001\",\"Contact\":{\"CurrentAddress\":{\"HousingStatus\":\"Renting\",\"StartDate\":\"2010-04-24\",\"x_ResidentialAddress\":\"ADDRESS-001\"},\"EmailAddress\":[{\"Email\":\"chrisaustralianactorsassociation.com.au\"}],\"HomePhone\":{\"AustralianDialingCode\":\"07\",\"Number\":\"98765432\"},\"Mobile\":{\"AustralianDialingCode\":\"04\",\"Number\":\"11223344\"}},\"Employment\":[{\"SelfEmployed\":{\"ANZSCOOccupationCode\":\"212112\",\"Occupation\":\"Film Producer\",\"x_Employer\":\"RELATEDCOMPANY-001\",\"BusinessIncomePrevious\":{\"ProfitAfterTax\":123000.0,\"ProfitBeforeTax\":200000.0,\"StartDate\":\"2017-01-07\"},\"BusinessIncomeRecent\":{\"ProfitAfterTax\":660000.0,\"ProfitBeforeTax\":1000000.0,\"StartDate\":\"2018-01-07\"}}}],\"PersonName\":{\"FirstName\":\"Christopher\",\"NameTitle\":\"Mr\",\"Surname\":\"Hemsworth\"}},{\"ApplicantType\":\"Borrower\",\"Citizenship\":\"AU\",\"CountryOfBirth\":\"AU\",\"DateOfBirth\":\"1990-01-13\",\"FirstHomeBuyer\":\"Yes\",\"Gender\":\"Male\",\"MaritalStatus\":\"Single\",\"RelationshipToPrimaryApplicant\":\"Sibling\",\"UniqueID\":\"PA002-LIAM\",\"x_Household\":\"HOUSEHOLD-001\",\"Contact\":{\"CurrentAddress\":{\"HousingStatus\":\"Renting\",\"StartDate\":\"2010-04-24\",\"x_ResidentialAddress\":\"ADDRESS-001\"},\"EmailAddress\":[{\"Email\":\"liamaustralianactorsassociation.com.au\"}],\"HomePhone\":{\"AustralianDialingCode\":\"07\",\"Number\":\"98564534\"},\"Mobile\":{\"AustralianDialingCode\":\"04\",\"Number\":\"11223355\"}},\"Employment\":[{\"SelfEmployed\":{\"ANZSCOOccupationCode\":\"212112\",\"Occupation\":\"Film Producer\",\"x_Employer\":\"RELATEDCOMPANY-001\",\"BusinessIncomePrevious\":{\"ProfitAfterTax\":66000.0,\"ProfitBeforeTax\":100000.0,\"StartDate\":\"2017-01-07\"},\"BusinessIncomeRecent\":{\"ProfitAfterTax\":330000.0,\"ProfitBeforeTax\":500000.0,\"StartDate\":\"2018-01-07\"}}}],\"PersonName\":{\"FirstName\":\"Liam\",\"NameTitle\":\"Mr\",\"Surname\":\"Hemsworth\"}}],\"RealEstateAsset\":[{\"Transaction\":\"Owns\",\"UniqueID\":\"REA001-INVESTMENT\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":1200000.0},\"PercentOwned\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]}},{\"Occupancy\":\"Owner Primary\",\"PrimaryPurpose\":\"Owner Occupied\",\"Transaction\":\"Purchasing\",\"UniqueID\":\"REA002-DOUBLEBAY\",\"x_Address\":\"ADD002-DOUBLEBAY\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"EstimateMethodology\":\"Current Market Value\",\"Value\":9500000.0}}],\"RelatedCompany\":[{\"ABN\":\"12345678901\",\"BusinessName\":\"Hemsworth Film Production\",\"BusinessStructure\":\"Partnership\",\"UniqueID\":\"RC001-HFPRODUCTION\"}]}'"
+                }
+              ]
+            },
+            "doc": "Type inferred from '{\"Application\":{\"Address\":[{\"AustralianPostCode\":\"3000\",\"AustralianState\":\"VIC\",\"Country\":\"AU\",\"Suburb\":\"Melbourne\",\"Type\":\"Standard\",\"UniqueID\":\"ADDRESS-001\",\"Standard\":{\"StreetName\":\"Collins\",\"StreetNumber\":\"18\",\"StreetType\":\"Street\"}},{\"AustralianPostCode\":\"2028\",\"AustralianState\":\"NSW\",\"Country\":\"AU\",\"Suburb\":\"Double Bay\",\"Type\":\"Standard\",\"UniqueID\":\"ADD002-DOUBLEBAY\",\"Standard\":{\"StreetName\":\"Ocean\",\"StreetNumber\":\"100\",\"StreetType\":\"Avenue\"}}],\"Household\":[{\"NumberOfAdults\":2,\"NumberOfDependants\":0,\"UniqueID\":\"HOUSEHOLD-001\",\"ExpenseDetails\":{\"LivingExpense\":[{\"Amount\":350.0,\"Category\":\"Groceries\",\"Frequency\":\"Weekly\",\"UniqueID\":\"LE001-GROCERIES\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}},{\"Amount\":1500.0,\"Category\":\"Investment Property Running Costs\",\"Frequency\":\"Monthly\",\"UniqueID\":\"LE002-INVESTMENT-CHRIS\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]}}]}}],\"Liability\":[{\"AnnualInterestRate\":3.75,\"OriginalAmount\":200000.0,\"OriginalLoanPurpose\":\"Personal\",\"OutstandingBalance\":90000.0,\"Type\":\"Car Loan\",\"PercentOwned\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]},\"RemainingTerm\":{\"Duration\":32,\"Units\":\"Months\"},\"Repayment\":[{\"RepaymentAmount\":3000.0,\"RepaymentFrequency\":\"Monthly\"}]}],\"LoanDetails\":[{\"AmountRequested\":5500000.0,\"LoanType\":\"Amortising Home Loan\",\"Borrowers\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":100.0,\"x_Party\":\"PA002-LIAM\"}]},\"LendingPurpose\":[{\"IncludesRefinancing\":\"No\",\"LenderCode\":\"NewPurchase\"}],\"LoanPurpose\":{\"PrimaryPurpose\":\"Owner Occupied\"},\"ProposedRepayment\":{\"RegularRepayment\":[{\"Amount\":12000.0,\"Frequency\":\"Fortnightly\"}]},\"Security\":[{\"x_Security\":\"REA002-DOUBLEBAY\"}],\"Term\":{\"TotalTermDuration\":25,\"TotalTermUnits\":\"Years\"}}],\"NonRealEstateAsset\":[{\"Transaction\":\"Owns\",\"Type\":\"Motor Vehicle and Transport\",\"UniqueID\":\"NREA001-FERRARI\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":220000.0},\"MotorVehicle\":{\"Make\":\"Ferrari\",\"Model\":\"Testarossa\",\"RegistrationNumber\":\"THOR\",\"Year\":\"1984\"},\"PercentOwned\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}},{\"Transaction\":\"Owns\",\"Type\":\"Financial Asset\",\"UniqueID\":\"NREA003-SAVINGS\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":4000000.0},\"FinancialAsset\":{\"Type\":\"Savings Account\"},\"PercentOwned\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA002-LIAM\"}]}}],\"PersonApplicant\":[{\"ApplicantType\":\"Borrower\",\"Citizenship\":\"AU\",\"CountryOfBirth\":\"AU\",\"DateOfBirth\":\"1983-07-11\",\"FirstHomeBuyer\":\"Yes\",\"Gender\":\"Male\",\"MaritalStatus\":\"Single\",\"PrimaryApplicant\":\"Yes\",\"UniqueID\":\"PA001-CHRIS\",\"x_Household\":\"HOUSEHOLD-001\",\"Contact\":{\"CurrentAddress\":{\"HousingStatus\":\"Renting\",\"StartDate\":\"2010-04-24\",\"x_ResidentialAddress\":\"ADDRESS-001\"},\"EmailAddress\":[{\"Email\":\"chrisaustralianactorsassociation.com.au\"}],\"HomePhone\":{\"AustralianDialingCode\":\"07\",\"Number\":\"98765432\"},\"Mobile\":{\"AustralianDialingCode\":\"04\",\"Number\":\"11223344\"}},\"Employment\":[{\"SelfEmployed\":{\"ANZSCOOccupationCode\":\"212112\",\"Occupation\":\"Film Producer\",\"x_Employer\":\"RELATEDCOMPANY-001\",\"BusinessIncomePrevious\":{\"ProfitAfterTax\":123000.0,\"ProfitBeforeTax\":200000.0,\"StartDate\":\"2017-01-07\"},\"BusinessIncomeRecent\":{\"ProfitAfterTax\":660000.0,\"ProfitBeforeTax\":1000000.0,\"StartDate\":\"2018-01-07\"}}}],\"PersonName\":{\"FirstName\":\"Christopher\",\"NameTitle\":\"Mr\",\"Surname\":\"Hemsworth\"}},{\"ApplicantType\":\"Borrower\",\"Citizenship\":\"AU\",\"CountryOfBirth\":\"AU\",\"DateOfBirth\":\"1990-01-13\",\"FirstHomeBuyer\":\"Yes\",\"Gender\":\"Male\",\"MaritalStatus\":\"Single\",\"RelationshipToPrimaryApplicant\":\"Sibling\",\"UniqueID\":\"PA002-LIAM\",\"x_Household\":\"HOUSEHOLD-001\",\"Contact\":{\"CurrentAddress\":{\"HousingStatus\":\"Renting\",\"StartDate\":\"2010-04-24\",\"x_ResidentialAddress\":\"ADDRESS-001\"},\"EmailAddress\":[{\"Email\":\"liamaustralianactorsassociation.com.au\"}],\"HomePhone\":{\"AustralianDialingCode\":\"07\",\"Number\":\"98564534\"},\"Mobile\":{\"AustralianDialingCode\":\"04\",\"Number\":\"11223355\"}},\"Employment\":[{\"SelfEmployed\":{\"ANZSCOOccupationCode\":\"212112\",\"Occupation\":\"Film Producer\",\"x_Employer\":\"RELATEDCOMPANY-001\",\"BusinessIncomePrevious\":{\"ProfitAfterTax\":66000.0,\"ProfitBeforeTax\":100000.0,\"StartDate\":\"2017-01-07\"},\"BusinessIncomeRecent\":{\"ProfitAfterTax\":330000.0,\"ProfitBeforeTax\":500000.0,\"StartDate\":\"2018-01-07\"}}}],\"PersonName\":{\"FirstName\":\"Liam\",\"NameTitle\":\"Mr\",\"Surname\":\"Hemsworth\"}}],\"RealEstateAsset\":[{\"Transaction\":\"Owns\",\"UniqueID\":\"REA001-INVESTMENT\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":1200000.0},\"PercentOwned\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]}},{\"Occupancy\":\"Owner Primary\",\"PrimaryPurpose\":\"Owner Occupied\",\"Transaction\":\"Purchasing\",\"UniqueID\":\"REA002-DOUBLEBAY\",\"x_Address\":\"ADD002-DOUBLEBAY\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"EstimateMethodology\":\"Current Market Value\",\"Value\":9500000.0}}],\"RelatedCompany\":[{\"ABN\":\"12345678901\",\"BusinessName\":\"Hemsworth Film Production\",\"BusinessStructure\":\"Partnership\",\"UniqueID\":\"RC001-HFPRODUCTION\"}]}}'"
+          },
+          {
+            "name": "Instructions",
+            "type": {
+              "type": "record",
+              "name": "Package",
+              "namespace": "Instructions",
+              "fields": [
+                {
+                  "name": "ApplicationInstructions",
+                  "type": {
+                    "type": "record",
+                    "name": "Package",
+                    "namespace": "ApplicationInstructions.Instructions",
+                    "fields": [
+                      {
+                        "name": "Submit",
+                        "type": {
+                          "type": "record",
+                          "name": "Package",
+                          "namespace": "Submit.ApplicationInstructions.Instructions",
+                          "fields": [
+                            {
+                              "name": "AssessmentType",
+                              "type": "string",
+                              "doc": "Type inferred from '\"Indicative\"'"
+                            }
+                          ]
+                        },
+                        "doc": "Type inferred from '{\"AssessmentType\":\"Indicative\"}'"
+                      }
+                    ]
+                  },
+                  "doc": "Type inferred from '{\"Submit\":{\"AssessmentType\":\"Indicative\"}}'"
+                }
+              ]
+            },
+            "doc": "Type inferred from '{\"ApplicationInstructions\":{\"Submit\":{\"AssessmentType\":\"Indicative\"}}}'"
+          },
+          {
+            "name": "Publisher",
+            "type": {
+              "type": "record",
+              "name": "Package",
+              "namespace": "Publisher",
+              "fields": [
+                {
+                  "name": "LIXICode",
+                  "type": "string",
+                  "doc": "Type inferred from '\"LIXIBRKR\"'"
+                }
+              ]
+            },
+            "doc": "Type inferred from '{\"LIXICode\":\"LIXIBRKR\"}'"
+          },
+          {
+            "name": "Recipient",
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "record",
+                "name": "Package",
+                "namespace": "Recipient",
+                "fields": [
+                  {
+                    "name": "LIXICode",
+                    "type": "string",
+                    "doc": "Type inferred from '\"LIXIBANK\"'"
+                  }
+                ]
+              }
+            },
+            "doc": "Type inferred from '[{\"LIXICode\":\"LIXIBANK\"}]'"
+          },
+          {
+            "name": "SchemaVersion",
+            "type": {
+              "type": "record",
+              "name": "Package",
+              "namespace": "SchemaVersion",
+              "fields": [
+                {
+                  "name": "LIXITransactionType",
+                  "type": "string",
+                  "doc": "Type inferred from '\"CAL\"'"
+                },
+                {
+                  "name": "LIXIVersion",
+                  "type": "string",
+                  "doc": "Type inferred from '\"2.6.52\"'"
+                }
+              ]
+            },
+            "doc": "Type inferred from '{\"LIXITransactionType\":\"CAL\",\"LIXIVersion\":\"2.6.52\"}'"
+          }
+        ]
+      },
+      "doc": "Type inferred from '{\"Content\":{\"Application\":{\"Address\":[{\"AustralianPostCode\":\"3000\",\"AustralianState\":\"VIC\",\"Country\":\"AU\",\"Suburb\":\"Melbourne\",\"Type\":\"Standard\",\"UniqueID\":\"ADDRESS-001\",\"Standard\":{\"StreetName\":\"Collins\",\"StreetNumber\":\"18\",\"StreetType\":\"Street\"}},{\"AustralianPostCode\":\"2028\",\"AustralianState\":\"NSW\",\"Country\":\"AU\",\"Suburb\":\"Double Bay\",\"Type\":\"Standard\",\"UniqueID\":\"ADD002-DOUBLEBAY\",\"Standard\":{\"StreetName\":\"Ocean\",\"StreetNumber\":\"100\",\"StreetType\":\"Avenue\"}}],\"Household\":[{\"NumberOfAdults\":2,\"NumberOfDependants\":0,\"UniqueID\":\"HOUSEHOLD-001\",\"ExpenseDetails\":{\"LivingExpense\":[{\"Amount\":350.0,\"Category\":\"Groceries\",\"Frequency\":\"Weekly\",\"UniqueID\":\"LE001-GROCERIES\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}},{\"Amount\":1500.0,\"Category\":\"Investment Property Running Costs\",\"Frequency\":\"Monthly\",\"UniqueID\":\"LE002-INVESTMENT-CHRIS\",\"PercentResponsible\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]}}]}}],\"Liability\":[{\"AnnualInterestRate\":3.75,\"OriginalAmount\":200000.0,\"OriginalLoanPurpose\":\"Personal\",\"OutstandingBalance\":90000.0,\"Type\":\"Car Loan\",\"PercentOwned\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]},\"RemainingTerm\":{\"Duration\":32,\"Units\":\"Months\"},\"Repayment\":[{\"RepaymentAmount\":3000.0,\"RepaymentFrequency\":\"Monthly\"}]}],\"LoanDetails\":[{\"AmountRequested\":5500000.0,\"LoanType\":\"Amortising Home Loan\",\"Borrowers\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":100.0,\"x_Party\":\"PA002-LIAM\"}]},\"LendingPurpose\":[{\"IncludesRefinancing\":\"No\",\"LenderCode\":\"NewPurchase\"}],\"LoanPurpose\":{\"PrimaryPurpose\":\"Owner Occupied\"},\"ProposedRepayment\":{\"RegularRepayment\":[{\"Amount\":12000.0,\"Frequency\":\"Fortnightly\"}]},\"Security\":[{\"x_Security\":\"REA002-DOUBLEBAY\"}],\"Term\":{\"TotalTermDuration\":25,\"TotalTermUnits\":\"Years\"}}],\"NonRealEstateAsset\":[{\"Transaction\":\"Owns\",\"Type\":\"Motor Vehicle and Transport\",\"UniqueID\":\"NREA001-FERRARI\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":220000.0},\"MotorVehicle\":{\"Make\":\"Ferrari\",\"Model\":\"Testarossa\",\"RegistrationNumber\":\"THOR\",\"Year\":\"1984\"},\"PercentOwned\":{\"Owner\":[{\"Percent\":50.0,\"x_Party\":\"PA001-CHRIS\"},{\"Percent\":50.0,\"x_Party\":\"PA002-LIAM\"}]}},{\"Transaction\":\"Owns\",\"Type\":\"Financial Asset\",\"UniqueID\":\"NREA003-SAVINGS\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":4000000.0},\"FinancialAsset\":{\"Type\":\"Savings Account\"},\"PercentOwned\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA002-LIAM\"}]}}],\"PersonApplicant\":[{\"ApplicantType\":\"Borrower\",\"Citizenship\":\"AU\",\"CountryOfBirth\":\"AU\",\"DateOfBirth\":\"1983-07-11\",\"FirstHomeBuyer\":\"Yes\",\"Gender\":\"Male\",\"MaritalStatus\":\"Single\",\"PrimaryApplicant\":\"Yes\",\"UniqueID\":\"PA001-CHRIS\",\"x_Household\":\"HOUSEHOLD-001\",\"Contact\":{\"CurrentAddress\":{\"HousingStatus\":\"Renting\",\"StartDate\":\"2010-04-24\",\"x_ResidentialAddress\":\"ADDRESS-001\"},\"EmailAddress\":[{\"Email\":\"chrisaustralianactorsassociation.com.au\"}],\"HomePhone\":{\"AustralianDialingCode\":\"07\",\"Number\":\"98765432\"},\"Mobile\":{\"AustralianDialingCode\":\"04\",\"Number\":\"11223344\"}},\"Employment\":[{\"SelfEmployed\":{\"ANZSCOOccupationCode\":\"212112\",\"Occupation\":\"Film Producer\",\"x_Employer\":\"RELATEDCOMPANY-001\",\"BusinessIncomePrevious\":{\"ProfitAfterTax\":123000.0,\"ProfitBeforeTax\":200000.0,\"StartDate\":\"2017-01-07\"},\"BusinessIncomeRecent\":{\"ProfitAfterTax\":660000.0,\"ProfitBeforeTax\":1000000.0,\"StartDate\":\"2018-01-07\"}}}],\"PersonName\":{\"FirstName\":\"Christopher\",\"NameTitle\":\"Mr\",\"Surname\":\"Hemsworth\"}},{\"ApplicantType\":\"Borrower\",\"Citizenship\":\"AU\",\"CountryOfBirth\":\"AU\",\"DateOfBirth\":\"1990-01-13\",\"FirstHomeBuyer\":\"Yes\",\"Gender\":\"Male\",\"MaritalStatus\":\"Single\",\"RelationshipToPrimaryApplicant\":\"Sibling\",\"UniqueID\":\"PA002-LIAM\",\"x_Household\":\"HOUSEHOLD-001\",\"Contact\":{\"CurrentAddress\":{\"HousingStatus\":\"Renting\",\"StartDate\":\"2010-04-24\",\"x_ResidentialAddress\":\"ADDRESS-001\"},\"EmailAddress\":[{\"Email\":\"liamaustralianactorsassociation.com.au\"}],\"HomePhone\":{\"AustralianDialingCode\":\"07\",\"Number\":\"98564534\"},\"Mobile\":{\"AustralianDialingCode\":\"04\",\"Number\":\"11223355\"}},\"Employment\":[{\"SelfEmployed\":{\"ANZSCOOccupationCode\":\"212112\",\"Occupation\":\"Film Producer\",\"x_Employer\":\"RELATEDCOMPANY-001\",\"BusinessIncomePrevious\":{\"ProfitAfterTax\":66000.0,\"ProfitBeforeTax\":100000.0,\"StartDate\":\"2017-01-07\"},\"BusinessIncomeRecent\":{\"ProfitAfterTax\":330000.0,\"ProfitBeforeTax\":500000.0,\"StartDate\":\"2018-01-07\"}}}],\"PersonName\":{\"FirstName\":\"Liam\",\"NameTitle\":\"Mr\",\"Surname\":\"Hemsworth\"}}],\"RealEstateAsset\":[{\"Transaction\":\"Owns\",\"UniqueID\":\"REA001-INVESTMENT\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"Value\":1200000.0},\"PercentOwned\":{\"Owner\":[{\"Percent\":100.0,\"x_Party\":\"PA001-CHRIS\"}]}},{\"Occupancy\":\"Owner Primary\",\"PrimaryPurpose\":\"Owner Occupied\",\"Transaction\":\"Purchasing\",\"UniqueID\":\"REA002-DOUBLEBAY\",\"x_Address\":\"ADD002-DOUBLEBAY\",\"EstimatedValue\":{\"EstimateBasis\":\"Applicant Estimate\",\"EstimateMethodology\":\"Current Market Value\",\"Value\":9500000.0}}],\"RelatedCompany\":[{\"ABN\":\"12345678901\",\"BusinessName\":\"Hemsworth Film Production\",\"BusinessStructure\":\"Partnership\",\"UniqueID\":\"RC001-HFPRODUCTION\"}]}},\"Instructions\":{\"ApplicationInstructions\":{\"Submit\":{\"AssessmentType\":\"Indicative\"}}},\"Publisher\":{\"LIXICode\":\"LIXIBRKR\"},\"Recipient\":[{\"LIXICode\":\"LIXIBANK\"}],\"SchemaVersion\":{\"LIXITransactionType\":\"CAL\",\"LIXIVersion\":\"2.6.52\"}}'"
+    }
+  ]
+}
